@@ -9,9 +9,9 @@
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);	
 
 	.title-container {
-		padding: 0 24px;
+		padding: 0 $app-horizontal-padding;
 		margin: 0 auto;
-		max-width: 700px;
+		max-width: $app-max-width;
 		height: $height;
 		line-height: $height;
 	}
