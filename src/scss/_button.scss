@@ -1,0 +1,19 @@
+.button {
+	$button-background: $main-color;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $button-background;
+	height: 40px;
+	padding: 0 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+
+	@include backgroundColorDarkenHover($button-background);
+
+	&:hover {
+		cursor: pointer;	
+	}
+}

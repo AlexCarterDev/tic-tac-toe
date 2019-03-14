@@ -1,0 +1,46 @@
+.new-game-dialog {
+	$unselected-color: #eee;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%, -50%);
+	max-width: 500px;
+	
+	
+	.buttons-row {
+		display: flex;
+		align-self: center;
+		& > * {
+			margin: 0 10px;
+		}
+	}
+
+	.dialog-container {
+		background: #fff;
+		margin: 0 15px;
+		display: grid;
+		padding: 20px;
+		padding-top: 20px;
+		grid-template-columns: 4fr 5fr;
+	}
+
+	.text {
+		align-self: center;
+		padding: 20px 0px;
+		font-size: 18px;
+	}
+	.button-create-game {
+		justify-self: end;
+		margin-top: 20px;
+	}
+	.button-back {
+		margin-top: 20px;
+		justify-self: start;
+		@include backgroundColorDarkenHover($unselected-color)
+	}
+	.unselected-button {
+		@include backgroundColorDarkenHover($unselected-color)
+	}
+}

@@ -3,6 +3,7 @@ import './scss/main.scss'
 import AppBar from './components/AppBar'
 import Board from './components/Board'
 import RoundButton from './components/RoundButton'
+import NewGameDialog from './components/NewGameDialog';
 
 
 const styleForExamples = {
@@ -43,11 +44,19 @@ function roundButtonExample() {
 	)
 }
 
+function newGameDialogExample() {
+	return (
+		<div style={styleForExamples}>
+			<NewGameDialog />
+		</div>
+	)
+}
+
 class App extends Component {
 
 
 	render() {
-		return boardExample();
+		return newGameDialogExample();
 	}
 }
 
