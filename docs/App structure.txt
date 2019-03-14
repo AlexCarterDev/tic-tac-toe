@@ -1,0 +1,56 @@
+reusable components
+	RoundButton: text, size, backgroundColor, color
+	Board: boardSize, crossComponent, circleComponent, boardMap
+	Cross: size, thickness
+	Circle: size, thickness
+	AppBar: title, backgroundColor, color,
+	Button: text, backgroundColor, color,
+	Player: iconComponent, iconLocation, highlight
+	Duration: ms
+	Overlay: opacity
+	
+Более сложные компоненты, врядли их можно использовать в другом приложении
+	NewGameDialog: selectColor, noSelectColor, hoverOpacity
+	GamePreview: gameState, duration, owner, opponent, winner
+	GamePreviewList
+	BoardList
+	PlayingPlayers
+	InputPlayerName
+	
+pages:
+	Game
+		PlayGameHost
+		PlayGameConnect
+		ViewGame
+	ListGames
+	
+Иерархия компонентов
+	#list-games
+		#app-bar
+			.title-container
+				.title
+		.overlay
+		.outer-container
+			.content-container
+				.open-dialog-button
+				.user-name-container
+					.user-name-input
+				.game-preview-list
+					.game-preview
+				.new-game-dialog
+					.board-size-text
+					.buttons-row
+					.board-count
+					.buttons-row
+					.back-button
+					.create-new-game-button
+	#play-game-host
+	#play-game-connect
+	#view-game
+		--//--
+		.outer-container
+			.content-container
+				.playing-players
+				.board-list
+				.duration
+				.button
