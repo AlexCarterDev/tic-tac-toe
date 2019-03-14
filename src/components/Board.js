@@ -20,7 +20,7 @@ export default class Board extends Component {
 		}
 
 		return (
-			<div className="board" style={Object.assign(styleColumnNum, {color: '#ff'})}>
+			<div className="board" style={styleColumnNum}>
 				{cells}
 			</div>
 		)

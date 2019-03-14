@@ -4,6 +4,7 @@ import AppBar from './components/AppBar'
 import Board from './components/Board'
 import RoundButton from './components/RoundButton'
 
+
 const styleForExamples = {
 	padding: '20vh 20vw',
 	height: '60vh',
@@ -25,7 +26,7 @@ function boardExample() {
 	]
 	return (
 		<div style={styleForExamples}>
-			<Board style={{height: 500, width: 500}}
+			<Board
 				strCompPairs={strCompPairs}
 				strField={map}
 				size={3}
@@ -46,7 +47,7 @@ class App extends Component {
 
 
 	render() {
-		return roundButtonExample();
+		return boardExample();
 	}
 }
 
