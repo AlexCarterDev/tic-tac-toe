@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './scss/main.scss'
 import AppBar from './components/AppBar'
 import Board from './components/Board'
+import RoundButton from './components/RoundButton'
 
 const styleForExamples = {
 	padding: '20vh 20vw',
@@ -33,12 +34,19 @@ function boardExample() {
 	);
 }
 
+function roundButtonExample() {
+	return (
+		<div style={styleForExamples}>
+			<RoundButton>4</RoundButton>
+		</div>
+	)
+}
 
 class App extends Component {
 
 
 	render() {
-		return boardExample();
+		return roundButtonExample();
 	}
 }
 
