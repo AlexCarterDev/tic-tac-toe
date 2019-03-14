@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import './scss/main.scss'
+import AppBar from './components/AppBar'
 
 class App extends Component {
 	render() {
 		return (
-			<h1>Hello</h1>
+			<AppBar title='Tic Tac Toe' />
 		);
 	}
 }

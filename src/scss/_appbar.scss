@@ -1,0 +1,18 @@
+#app-bar {
+	$height: 60px;
+
+	position: fixed;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	height: $height;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);	
+
+	.title-container {
+		padding: 0 24px;
+		margin: 0 auto;
+		max-width: 700px;
+		height: $height;
+		line-height: $height;
+	}
+}
