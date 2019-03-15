@@ -17,6 +17,7 @@ export default class ListGames extends Component {
 
 					<div className="game-preview-list">
 						<div className="square">
+							
 						</div>
 						<div className="square">
 						</div>

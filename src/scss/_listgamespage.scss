@@ -1,4 +1,6 @@
 #list-games {
+
+	// Ввод имени пользователя
 	.user-name-container {
 		padding: 20px 0;
 		max-width: 400px;
@@ -13,6 +15,8 @@
 		}
 	}
 
+	// CSS Trick: flexible square
+	// Контейнер для Game preview
 	.square {
 		background: #eee;
 		&:before {
@@ -22,8 +26,8 @@
 		}
 	}
 
+	// Список игр
 	.game-preview-list {
-		flex-grow: 1;
 		display: grid;
 		grid-gap: 10px;
 		grid-template-columns: repeat(3, 1fr);
@@ -33,6 +37,7 @@
 		}
 	}
 
+	// Зафиксированная кнопка для отображения диалога создания игры
 	$create-button-right: 50px;
 	.create-new-game {
 		height: 50px;
@@ -40,9 +45,9 @@
 		float: right;
 		position: fixed;
 		bottom: 50px;
+		// Справа от границы contant-container
 		right: calc((100% - #{$app-max-width}) / 2 + #{$create-button-right});
 	}
-
 	@media (max-width: $app-max-width) {
 		.create-new-game {
 			right: $create-button-right;
