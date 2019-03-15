@@ -5,7 +5,7 @@ export default class AppBar extends Component {
 		return (
 			<div id="app-bar">
 				<div className="title-container">
-					<h2 className="title">{this.props.title}</h2>
+					<h2 className="title">{this.props.children}</h2>
 				</div>
 			</div>
 		)

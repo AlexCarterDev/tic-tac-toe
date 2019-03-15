@@ -5,8 +5,25 @@
 @import 'roundbutton';
 @import 'button';
 @import 'newgamedialog';
+@import 'listgamespage';
+@import 'gamepreview';
 
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
+
+.outer-container {
+	background-color: #eee;
+	height: 100vh;
+}
+.content-container {
+	margin: 0 auto;
+	max-width: $app-max-width;
+	height: 100%;
+	background-color: #fff;
+	padding: 0 $app-horizontal-padding;
+	padding-top: $app-bar-height;
+}
+

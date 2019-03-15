@@ -4,7 +4,7 @@ import AppBar from './components/AppBar'
 import Board from './components/Board'
 import RoundButton from './components/RoundButton'
 import NewGameDialog from './components/NewGameDialog';
-
+import ListGames from './pages/ListGames'
 
 const styleForExamples = {
 	padding: '20vh 20vw',
@@ -36,27 +36,11 @@ function boardExample() {
 	);
 }
 
-function roundButtonExample() {
-	return (
-		<div style={styleForExamples}>
-			<RoundButton>4</RoundButton>
-		</div>
-	)
-}
-
-function newGameDialogExample() {
-	return (
-		<div style={styleForExamples}>
-			<NewGameDialog />
-		</div>
-	)
-}
-
 class App extends Component {
-
-
 	render() {
-		return newGameDialogExample();
+		return (
+			<ListGames />
+		)
 	}
 }
 

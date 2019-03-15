@@ -34,9 +34,7 @@ export default class NewGameDialog extends Component {
 	}
 
 	render() {
-
 		var sizeSelector = this.createSelector(this.boardSizes, this.state.selectedBoardSize, this.selectCountHandler)
-
 		var countSelector = this.createSelector(this.boardCounts, this.state.selectedCountBoards, this.selectSizeHandler)
 
 		return (
