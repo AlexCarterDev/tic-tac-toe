@@ -1,7 +1,7 @@
 .game-preview {
 	display: flex;
 	flex-direction: column;
-
+	width: 100%;
 	.player {
 		flex: 1;
 		display: flex;
@@ -21,7 +21,7 @@
 			font-weight: bold;
 		}
 	}
-	
+
 	.separator {
 		height: 2px;
 		margin: 0 10px;

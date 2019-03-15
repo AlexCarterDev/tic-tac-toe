@@ -19,6 +19,7 @@
 	// Контейнер для Game preview
 	.square {
 		background: #eee;
+		display: flex;
 		&:before {
 			float: left;
 			content: "";
@@ -33,13 +34,30 @@
 		grid-template-columns: repeat(3, 1fr);
 
 		.game-preview {
-			flex: 1fr;
+			flex: 1;
 		}
 	}
+	@media (min-width: 700px) {
+		.game-preview-list {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+	@media (max-width: 538px) {
+		.game-preview-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 330px) {
+		.game-preview-list {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
 
 	// Зафиксированная кнопка для отображения диалога создания игры
 	$create-button-right: 50px;
 	.create-new-game {
+		font-weight: bold;
 		height: 50px;
 		width: 50px;
 		float: right;

@@ -26,6 +26,6 @@ body {
 	max-width: $app-max-width;
 	background-color: #fff;
 	min-height: 100vh;
-	padding: 0 $app-horizontal-padding;
+	padding: $app-horizontal-padding;
 	padding-top: $app-bar-height;
 }
