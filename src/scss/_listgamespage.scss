@@ -54,6 +54,16 @@
 	}
 
 
+	// Overlay 
+	.overlay {
+		position: fixed;
+		top: $app-bar-height;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background: rgba(0,0,0,.4);
+	}
+
 	// Зафиксированная кнопка для отображения диалога создания игры
 	$create-button-right: 50px;
 	.create-new-game {

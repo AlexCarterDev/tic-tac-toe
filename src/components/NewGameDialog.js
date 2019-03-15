@@ -50,7 +50,7 @@ export default class NewGameDialog extends Component {
 						{countSelector}
 					</div>
 
-					<Button className='button-back'>{"<"}</Button>
+					<Button className='button-back' onClick={this.props.onClickBackButton}>{"<"}</Button>
 					<Button className='button-create-game'>Создать</Button>
 				</div>
 			</div>

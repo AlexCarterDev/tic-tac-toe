@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import AppBar from '../components/AppBar'
 import GamePreview from '../components/GamePreview';
 import RoundButton from '../components/RoundButton';
-import api from '../ServerApi'
+import api from '../ServerApi';
+import NewGameDialog from '../components/NewGameDialog';
+
+
 
 export default class ListGames extends Component {
 	state = {
 		games: [],
+		showDialog: false,
 	}
 
 	updateGameList = (games) => {
@@ -17,7 +21,15 @@ export default class ListGames extends Component {
 		api.getGamesList(this.updateGameList);
 	}
 
+	showOrHideDialog = () => {
+		this.setState({
+			showDialog: !this.state.showDialog
+		})
+	}
+
 	render() {
+
+
 		var previewsArr = this.state.games.map((descr) => (
 			<div className="square">
 				<GamePreview
@@ -45,7 +57,20 @@ export default class ListGames extends Component {
 						{previewsArr}
 					</div>
 
-					<RoundButton className="create-new-game">+</RoundButton>
+					<RoundButton 
+						className="create-new-game"
+						onClick={this.showOrHideDialog}>
+						+
+					</RoundButton>
+
+					{ this.state.showDialog && 
+						<>
+							<div className="overlay" onClick={this.showOrHideDialog} />
+							<NewGameDialog 
+								onClickBackButton={this.showOrHideDialog}
+							/>
+						</>
+					}
 				</div>
 			</div>
 		)
