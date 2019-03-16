@@ -5,6 +5,7 @@ import Board from './components/Board'
 import RoundButton from './components/RoundButton'
 import NewGameDialog from './components/NewGameDialog';
 import ListGames from './pages/ListGames'
+import Game from './pages/Game'
 
 const styleForExamples = {
 	padding: '20vh 20vw',
@@ -39,7 +40,12 @@ function boardExample() {
 class App extends Component {
 	render() {
 		return (
-			<ListGames />
+			<ListGames/>
+			// <Game 
+			// 	owner="Alex Carter"
+			// 	opponent="John Doe"
+			// 	boardSize={3}
+			// />
 		)
 	}
 }

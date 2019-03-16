@@ -1,0 +1,83 @@
+.game {
+	@mixin crossLineProperties($size, $thickness) {
+		height: $size;
+		width: $size;
+		
+		.cross-line {
+			// 1.414.. = sqrt(2)
+			$length: $size*1.41421356237 - 2*$thickness;
+			$shiftX: ($length - $size)/2;
+			$shiftY: $size/2 - $thickness/2;
+			height: $thickness;
+			width: $length;
+	
+			&:nth-child(1) {
+				transform: translate(-$shiftX, $shiftY) rotate(45deg);
+			}
+	
+			&:nth-child(2) {
+				transform: translate(-$shiftX, $shiftY) rotate(-45deg);
+			}
+		}
+	}
+
+	@mixin circleProperties($size, $thickness) {
+		height: $size;
+		width: $size;
+		background: #fff;
+		border: $thickness solid #03a9f4;
+		border-radius: 50%;
+	}
+
+	.cross {
+		// @include crossLineProperties($size, $thickness)
+		position: relative;
+		background: #fff;
+		.cross-line {
+			background: #bdbdbd;
+			position: absolute;	
+		}	
+	}
+	
+	.playing-players {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 25px 0;
+		
+		.player {
+			display: flex;
+			flex-direction: row;
+			padding-bottom: 8px;
+			.cross {
+				margin-top: 2px;
+				@include crossLineProperties(26px, 3px);
+			}
+			.circle {
+				margin-top: 2px;
+				@include circleProperties(26px, 3px);
+			}
+			.player-name {
+				font-size: 20px;
+
+				&:nth-child(1) {
+					padding-right: 10px;
+				}
+				&:nth-child(2) {
+					padding-left: 10px;
+				}
+			}
+		}
+		.player-current {
+			border-bottom: 2px solid black;
+		}
+	}
+	
+	.flexible-squares {
+		max-width: 500px;
+		width: 100%;
+		margin: 0 auto;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+

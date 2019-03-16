@@ -4,6 +4,7 @@ import GamePreview from '../components/GamePreview';
 import RoundButton from '../components/RoundButton';
 import api from '../ServerApi';
 import NewGameDialog from '../components/NewGameDialog';
+import FlexibleSquares from '../components/FlexibleSquares';
 
 
 
@@ -31,21 +32,19 @@ export default class ListGames extends Component {
 
 
 		var previewsArr = this.state.games.map((descr) => (
-			<div className="square">
-				<GamePreview
-					owner={descr.owner}
-					opponent={descr.opponent}
-					winner={descr.gameResult}
-					gameState={descr.state}
-					duration={descr.gameDuration}
-				/> 
-			</div>
+			<GamePreview
+				owner={descr.owner}
+				opponent={descr.opponent}
+				winner={descr.gameResult}
+				gameState={descr.state}
+				duration={descr.gameDuration}
+			/> 
 		))
 
 
 		return (
 			<div id="list-games">
-				<AppBar>Tic Tac Toe</AppBar>
+				
 				<div className="content-container">
 
 					<div className="user-name-container">
@@ -53,9 +52,9 @@ export default class ListGames extends Component {
 							placeholder="Введите свое имя"/>
 					</div>
 
-					<div className="game-preview-list">
+					<FlexibleSquares>
 						{previewsArr}
-					</div>
+					</FlexibleSquares>
 
 					<RoundButton 
 						className="create-new-game"
@@ -72,6 +71,8 @@ export default class ListGames extends Component {
 						</>
 					}
 				</div>
+				{/* Снизу, title был над списком, позиция которого relative */}
+				<AppBar>Tic Tac Toe</AppBar>
 			</div>
 		)
 	}

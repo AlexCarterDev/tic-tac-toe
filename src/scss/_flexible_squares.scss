@@ -1,0 +1,20 @@
+// CSS Trick: flexible square
+// Некорректно работает в firefox
+.flexible-squares {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+
+	.square {
+		background: #eee;
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+			float: left;
+		}
+	}
+}
