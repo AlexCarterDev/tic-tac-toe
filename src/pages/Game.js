@@ -63,6 +63,7 @@ export default class Game extends Component {
 			}
 			case 'playing': {
 				classGameState = 'game-playing'
+				button = <Button>SURRENDER</Button>
 				break
 			}
 			case 'created': {
