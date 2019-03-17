@@ -5,16 +5,18 @@ import FlexibleSquares from '../components/FlexibleSquares';
 
 function Cross(props) {
 	return (
-		<div className="cross">
-			<div className="cross-line"></div>
-			<div className="cross-line"></div>
-		</div>
+		<svg className='cross'>
+			<line x1="10%" y1="10%" x2="90%" y2="90%"/>
+			<line x1="10%" y1="90%" x2="90%" y2="10%"/>
+		</svg>
 	)
 }
 
 function Circle(props) {
 	return (
-		<div className="circle"></div>
+		<svg className='circle'>
+			<circle cx="50%" cy="50%" r="42%"/>
+		</svg>
 	)
 }
 
@@ -42,19 +44,18 @@ export default class Game extends Component {
 	pairs = {
 		"X": <Cross />,
 		"O": <Circle />,
-		"?": <div></div>
+		"?": <div/>
 	}
 	field = [
-		['X', 'O', 'X'],
-		['?', 'O', 'X'], 
-		['O', 'X', '?'], 
+		['X', '?', 'X'],
+		['?', 'O', 'X'],
+		['O', 'O', 'X'],
 	]
 
 	render() {
 		var { boardSize, owner, opponent} = this.props;
 		return (
 			<div className="game">
-				<AppBar>Tic Tac Toe</AppBar>
 				<div className="content-container">
 					<div className="playing-players">
 						<Player name={owner} current iconPosition='right' icon={<Cross />} />
@@ -62,12 +63,13 @@ export default class Game extends Component {
 					</div>
 					<FlexibleSquares >
 						<Board 
-							size={boardSize}
+							size={3}
 							strCompPairs={this.pairs}
 							strField={this.field}
 						/>
 					</FlexibleSquares>
 				</div>
+				<AppBar>Tic Tac Toe</AppBar>
 			</div>
 		)
 	}

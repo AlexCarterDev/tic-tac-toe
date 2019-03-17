@@ -22,11 +22,9 @@ export default class Duration extends Component {
 		var ss = this.convertNumberTo2Digits(time.seconds);
 
 		return (
-			<div>
-				<p className={"duration + " + this.props.className}>
-					{hh + ":" + mm + ":" + ss}
-				</p>
-			</div>
+			<p className={"duration + " + this.props.className}>
+				{hh + ":" + mm + ":" + ss}
+			</p>
 		)
 	}
 }

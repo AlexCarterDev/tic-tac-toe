@@ -1,9 +1,18 @@
 .board {
-	flex: 1;
-	background-color: #ffeb3b;
-
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	
+	// Скрывает полоску справа в chrome
 	display: grid;
-	grid-gap: 5px;
+	// grid-gap: 5px;
+	& > * {
+		// border-top: 4px solid #000;
+		// border-left: 4px solid #000;
+		border-color: #ffeb3b;
+		border-width: 8px;
+		
+	}
 
 	// grid-template-columns - определяется в js
 }

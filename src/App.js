@@ -22,9 +22,10 @@ function boardExample() {
 	strCompPairs.b = blackCell;
 
 	var map = [
-		['b','w','b'],
-		['w','w','w'],
-		['w','b','w'],
+		['b','w','b','w'],
+		['w','w','w','b'],
+		['w','b','w','b'],
+		['w','b','w','w'],
 	]
 	return (
 		<div style={styleForExamples}>
@@ -40,12 +41,10 @@ function boardExample() {
 class App extends Component {
 	render() {
 		return (
-			<ListGames/>
-			// <Game 
-			// 	owner="Alex Carter"
-			// 	opponent="John Doe"
-			// 	boardSize={3}
-			// />
+			<Game 
+				owner="Alex Carter"
+				opponent="John Doe"
+			/>
 		)
 	}
 }
