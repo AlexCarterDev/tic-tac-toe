@@ -44,6 +44,7 @@ class App extends Component {
 			<Game 
 				owner="Alex Carter"
 				opponent="John Doe"
+				gameState="view"
 			/>
 		)
 	}

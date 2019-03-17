@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AppBar from '../components/AppBar';
 import Board from '../components/Board';
 import FlexibleSquares from '../components/FlexibleSquares';
+import Duration from '../components/Duration';
+import Button from '../components/Button';
 
 function Cross(props) {
 	return (
@@ -37,9 +39,6 @@ function Player({name, current, iconPosition, icon}) {
 }
 
 export default class Game extends Component {
-	state = {
-		
-	}
 
 	pairs = {
 		"X": <Cross />,
@@ -53,9 +52,30 @@ export default class Game extends Component {
 	]
 
 	render() {
-		var { boardSize, owner, opponent} = this.props;
+		var { boardSize, owner, opponent, gameState} = this.props;
+		var classGameState;
+		var button;
+		switch(gameState) {
+			case 'view': {
+				classGameState = 'game-view'
+				button = <Button>BACK</Button>
+				break
+			}
+			case 'playing': {
+				classGameState = 'game-playing'
+				break
+			}
+			case 'created': {
+				classGameState = 'created'
+				break
+			}
+			default: {
+				throw classGameState + ' is unknown game state'
+			}
+		}
+
 		return (
-			<div className="game">
+			<div className={'game ' + classGameState}>
 				<div className="content-container">
 					<div className="playing-players">
 						<Player name={owner} current iconPosition='right' icon={<Cross />} />
@@ -68,6 +88,8 @@ export default class Game extends Component {
 							strField={this.field}
 						/>
 					</FlexibleSquares>
+					<Duration ms={21323} />
+					{button}
 				</div>
 				<AppBar>Tic Tac Toe</AppBar>
 			</div>

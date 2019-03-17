@@ -73,5 +73,37 @@
 		margin: 0 auto;
 		grid-template-columns: repeat(1, 1fr);
 	}
+
+	.duration {
+		text-align: center;
+		font-size: 22px;
+		padding: 40px;
+	}
+	.button {
+		align-self: center;
+	}
+
 }
 
+.game-view {
+	$color: #ccc;
+	$lines-color: #e5e5e5;
+
+	.circle, .cross{
+		stroke: $color;
+	}
+	.board > * {
+		border-color: $lines-color;
+	}
+	.playing-players {
+		.player-name {
+			color: $color;
+		}
+		.player-current {
+			border-color: $color;
+		}
+	}
+	.duration {
+		color: $color;
+	}
+}
