@@ -66,10 +66,6 @@ export default class Game extends Component {
 				button = <Button>SURRENDER</Button>
 				break
 			}
-			case 'created': {
-				classGameState = 'created'
-				break
-			}
 			default: {
 				throw classGameState + ' is unknown game state'
 			}
